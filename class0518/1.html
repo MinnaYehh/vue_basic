@@ -4,28 +4,33 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>test</title>
+    <title>test_1</title>
 </head>
 
 <body>
     <div id="app">
-        <p>Are you {{name}}?</p>
+        <!-- <p>hello {{name}} welcome back!</p> -->
+        <p>{{name}}, 要去{{hobby[1]}}嗎?</p>
         <p v-text="`${age}歲`"></p>
+        <p>{{live? "活著?": "有嗎"}}</p>
         <h6 v-html="content"></h6>
     </div>
     
     <script src="https://unpkg.com/vue"></script>
-
     <script>
         const app = Vue.createApp({
             data() {
                 return {
                     name: 'minna',
                     age: 18,
-                    hobby: ['movie', 'video'],
+                    hobby: ['爬山', '看電影', '睡覺'],
+                    live: false,
+                    skill:{
+                        ican:['play','sleep']
+
+                    }
                 };
             },
-            gender: null,
         });
         app.mount("#app");
     </script>
