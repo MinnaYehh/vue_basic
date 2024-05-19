@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test_5</title>
+    <style>
+    #app{
+        width: 5rem;
+        height: 5rem;
+    }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <img src="../images/motherFlower.jpg" alt="">
+        <img src="imgUrl" style= "width:6rem;" alt="">
+            <img :src="imgUrl" :style=" {
+            width: `${widths}rem`,
+            backgroundColor: bg
+            }" alt="">
+            <button @click="addW">LargeImage</button>
+        </div>
+
+    <script src="https://unpkg.com/vue"></script>
+    <script>
+    Vue.createApp({
+        data() {
+            return{
+                imgUrl: "../images/motherFlower.jpg",
+                bg: '#999',//string
+                widths: 2 //number
+            }
+            },
+            methods: {
+                addW(){
+                    //按下去 加大圖片
+                    if (this.widths === 9) return
+                    //延伸: 按下去改底色
+                    this.bg = `#${this.widths}#${this.widths}#${widths}`
+                    console.log(this.bg);
+                }
+            },
+        
+    }).mount("#app")
+    </script>
+</body>
+</html>
