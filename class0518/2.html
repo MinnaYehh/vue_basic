@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test_2</title>
+</head>
+<body>
+    <div>123</div>
+    <script>
+        function add(n1,n2){
+            return parseInt(n1) + parseInt(n2)
+        }
+        const res = add("1000.999", 200)
+        //console.log(res);
+
+        const addRes = (n1, n2)=>{
+            console.log('有嗎');
+            return parseInt(n1) + parseInt(n2)
+        }
+        console.log(addRes(520,520));
+
+        //'我是 ??血型 ??'
+        const callName = (name, blood) => {
+            return `'我是${name}血型是${blood}`
+        }
+        console.log(callName('MINNA','O'));
+    </script>
+</body>
+</html>

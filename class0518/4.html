@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test_4</title>
+    <style>
+        .box{
+            width: 5rem;
+            height: 5rem;
+        }
+        .red{
+            background-color: rgb(203, 31, 31);
+        }
+        .orange{
+            background-color: rgb(249, 152, 25);
+        }
+        .yellow{
+            background-color: rgb(255, 255, 33);
+        }
+        .green{
+            background-color: rgb(27, 167, 36);
+        }
+        .blue{
+            background-color: rgb(85, 85, 255);
+        }
+        .cyan{
+            background-color: rgb(38, 228, 183);
+        } 
+        .purple{
+            background-color: blueviolet;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        {{tab}}
+        <button @click="changeColor">changeColor</button>
+        <div class="box" :class="currentColor"></div>
+    </div>
+
+    <script src="https://unpkg.com/vue"></script>
+    <script>
+    Vue.createApp({
+        data() {
+            return{
+                res:0,
+                colors: ['red', 'orange', 'yellow', 'green','blue', 'cyan', 'purple']
+            }
+        },
+            computed:{
+                currentColor(){
+                    return this.colors[this.res];
+                
+            }
+        },
+            methods: {
+                changeColor(){
+                    this.res = (this.res + 1) % this.colors.length;
+            }
+            },
+         //七個顏色換色, 可以用陣列
+    }).mount("#app")
+    </script>
+</body>
+</html>
